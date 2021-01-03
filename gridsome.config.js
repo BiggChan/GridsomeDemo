@@ -8,10 +8,18 @@ module.exports = {
   siteName: 'Gridsome',
   plugins: [
     {
-      use: '@gridsome/source-filesystem',
+      use: '@gridsome/source-strapi',
       options: {
-        typeName: 'BlogPost',
-        path: './content/blog/**/*.md',
+        apiURL: process.env.GRIDSOME_API_URL,
+        queryLimit: 1000, // Defaults to 100
+        contentTypes: ['projects','journals'],
+        singleTypes: ['logo'],
+        // Possibility to login with a Strapi user,
+        // when content types are not publicly available (optional).
+        // loginData: {
+        //   identifier: 'cxg',
+        //   password: '123456'
+        // }
       }
     }
   ]

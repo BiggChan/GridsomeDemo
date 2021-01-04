@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: '拉钩教育',
   plugins: [
     {
       use: '@gridsome/source-strapi',
@@ -22,5 +22,19 @@ module.exports = {
         // }
       }
     }
-  ]
+  ],
+  templates: {
+    StrapiJournals: [ // 数据名称，这里的写法是规范的，不能自定义
+      {
+        path: '/journal/:id',// 路由标识
+        component: './src/templates/Journal.vue'// 组件地址
+      }
+    ],
+    StrapiProjects: [ // 数据名称，这里的写法是规范的，不能自定义
+      {
+        path: '/project/:id',// 路由标识
+        component: './src/templates/Project.vue'// 组件地址
+      }
+    ]
+  }
 }

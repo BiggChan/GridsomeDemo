@@ -3,19 +3,16 @@
     <header class="header sticky">
       <div class="container">
         <div class="left">
-          <a
+          <g-link
             href="/"
             aria-current="page"
             class="home-link active--exact active"
-            ><img
-              src="/assets/img/logo.332701b7.svg"
-              alt="Nichlas W. Andersen"
-              class="logo"
-          /></a>
+            ><img :src="logo" alt="Nichlas W. Andersen" class="logo"
+          /></g-link>
         </div>
         <nav class="nav right">
-          <a href="/journal" class="nav__link">Journal</a>
-          <a href="/contact" class="nav__link">Say Hi!</a>
+          <g-link href="/journal" class="nav__link">Journal</g-link>
+          <g-link href="/contact" class="nav__link">Say Hi!</g-link>
         </nav>
       </div>
     </header>
@@ -30,15 +27,14 @@
     </footer>
   </div>
 </template>
-
-<static-query>
-query {
-  metadata {
-    siteName
+<script>
+import logo from '@/assets/image/logo.svg';
+export default {
+  data() {
+    return {
+      logo
+    }
   }
-}
-</static-query>
-
-<style>
-
-</style>
+};
+</script>
+<style></style>
